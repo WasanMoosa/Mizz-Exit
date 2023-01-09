@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author TRA0004
@@ -13,8 +14,9 @@ import java.util.Stack;
 public class BackTrack2 {
 	/**
 	 * @param args
+	 * @throws InterruptedException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		String file = "testTrack.txt"; // name of File
 		Stack<int[]> stackIndex = new Stack<>(); // To save the possible path of @
 		char[][] placeArray = fromFile(file); // brings array of element
@@ -79,6 +81,8 @@ public class BackTrack2 {
 				System.out.println("\n");	
 		}
 			//Here you can put clear function
+			//cls();
+			TimeUnit.SECONDS.sleep(1);
 			System.out.println("\n");	
 
 				}
@@ -113,7 +117,12 @@ public class BackTrack2 {
 		return placeArray;
 	}
 	/**
-	 * This method check if you reach to the end or no
+	 * clear the console
 	 */
-
+public static void cls() {
+	for (int i=0; i<20; i++) {
+		System.out.println("");
+	}
+	
+}
 }
